@@ -8,7 +8,6 @@ export default class Page {
    * @param path path of the sub page (e.g. /path/to/page.html)
    */
   public open(path: string) {
-    const a = process.env;
-    return browser.url(`http://genlis-zeta.genome.bars.group/${path}`);
+    return browser.url(`${process.env.URL}/${path}`);
   }
 }
