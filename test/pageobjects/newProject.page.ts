@@ -1,4 +1,5 @@
 import Page from "./page";
+import faker from "@faker-js/faker";
 
 class ProjectPage extends Page {
   /**
@@ -20,12 +21,18 @@ class ProjectPage extends Page {
     return $("button.MuiButton-containedPrimary.MuiButton-disableElevation");
   }
 
-  public async creteProject(name: string) {
-    await this.date.setValue("01.03.2022");
-    await this.name.setValue(name);
-    await this.fullName.setValue(name);
+  public async creteProject() {
+    const project = {
+      date: `${faker.date.past()}`,
+      name: faker.company.companyName(),
+    };
 
+    await this.date.setValue(project.date);
+    await this.name.setValue(project.name);
+    await this.fullName.setValue(project.name);
     await this.createButton.click();
+
+    return project;
   }
 
   public open() {

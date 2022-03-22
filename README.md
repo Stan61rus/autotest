@@ -1,5 +1,9 @@
-# Создать файл .env
+# [WebdriverIO](https://webdriver.io/)
 
-# Запустить npm i
+Для разработки тестов используется фреймворк - WebdriverIO
+Так же используется Mocha - для синтаксиса написания тестов
 
-# npm run wdio - Запустить все тесты
+Создать файл .env
+Запустить npm i
+npm run wdio - Запустить все тесты
+npm run wdio -- --spec consignment.e2e.ts - Запустить 1 тест
